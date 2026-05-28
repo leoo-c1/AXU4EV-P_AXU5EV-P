@@ -87,7 +87,7 @@ save_bd_design
 
 make_wrapper -files [get_files $projpath/$projName.srcs/sources_1/bd/$bdname/$bdname.bd] -top
 # add_files -norecurse $projpath/$projName.srcs/sources_1/bd/$bdname/hdl/$wrapperName.v 
-add_files -norecurse [glob -nocomplain $projpath/$projName.srcs/sources_1/bd/$bdname/hdl/*.v]
+add_files -norecurse [glob -nocomplain $projpath/$projName.gen/sources_1/bd/$bdname/hdl/*.v]
 
 puts $bdname
 append bdWrapperName $bdname "_wrapper"
@@ -99,7 +99,7 @@ add_files -fileset constrs_1  -copy_to $projpath/$projName.srcs/constrs_1/new -f
 
 generate_target all [get_files  $projpath/$projName.srcs/sources_1/bd/$bdname/$bdname.bd]
 
-set_property is_enabled false [get_files  $projpath/$projName.srcs/sources_1/bd/$bdname/ip/design_1_xdma_0_0/ip_0/ip_0/synth/design_1_xdma_0_0_pcie4_ip_gt.xdc]
+set_property is_enabled false [get_files  $projpath/$projName.gen/sources_1/bd/$bdname/ip/design_1_xdma_0_0/ip_0/ip_0/synth/design_1_xdma_0_0_pcie4_ip_gt.xdc]
 
 launch_runs impl_1 -to_step write_bitstream -jobs $runs_jobs
 wait_on_run impl_1 
