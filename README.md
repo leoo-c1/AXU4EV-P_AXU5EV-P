@@ -25,9 +25,9 @@ In terms of backplane design, we have extended a variety of peripheral interface
 
 # AXU4EV-P/AXU5EV-P Demo Project
 ## Description
-This is vivado factory demo project for ALINX board.
+This is Vivado factory demo project for ALINX board.
 ## Requirement
-* Vivado 2020.1
+* Vivado 2025.2
 * AXU4EV-P/AXU5EV-P Development Board
 ## Create Vivado Project
 * Download recent release ZIP archive.
@@ -39,8 +39,8 @@ Choose one devicePart and save.
 xczu4ev-sfvc784-1-i is for AXU4EV-P  
 xczu5ev-sfvc784-2-i is for AXU5EV-P  
 ```
-set devicePart "xczu4ev-sfvc784-1-i"
-#set devicePart "xczu5ev-sfvc784-2-i"
+#set devicePart "xczu4ev-sfvc784-1-i"
+set devicePart "xczu5ev-sfvc784-2-i"
 set runs_jobs 5
 ```
 
@@ -56,6 +56,7 @@ source ./create_project.tcl
 ```
 
 ### Create Vivado Project using bat
+Note: This is only confirmed to work in Vivado 2020.1. If using Vivado 2025.2, use the tcl console method.
 1. In "**auto_create_project**" folder, there is "**create_project.bat**", open it in edit mode, and change to your own vivado software installation path. Save and close.
 ```
 CALL E:\XilinxVitis\Vivado\2020.1\bin\vivado.bat -mode batch -source create_project.tcl
